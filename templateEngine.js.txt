@@ -1,0 +1,27 @@
+const presets = {
+  battery: {
+    title: "バッテリー不具合について",
+    body: "バッテリーの減りが早い、充電できないなどの症状がある場合は、まずOSのアップデートをご確認ください。"
+  },
+  water: {
+    title: "水没による故障について",
+    body: "水濡れが原因で起動しない、画面が映らないなどの症状がある場合は、速やかに電源を切り、修理受付をご利用ください。"
+  },
+  os: {
+    title: "OS不具合について",
+    body: "アップデート後に動作が不安定になる場合は、再起動や初期化をお試しください。改善しない場合は修理をご検討ください。"
+  }
+};
+
+function generateTemplate() {
+  const presetKey = document.getElementById("preset").value;
+  const customText = document.getElementById("customText").value.trim();
+  const preset = presets[presetKey];
+
+  let html = `<h2>${preset.title}</h2>\n<p>${preset.body}</p>`;
+  if (customText) {
+    html += `\n<p>${customText}</p>`;
+  }
+
+  document.getElementById("preview").innerHTML = html;
+}

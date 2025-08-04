@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>テンプレート生成ツール</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; background: #f9f9f9; }
+    textarea, select, button { width: 100%; margin-top: 10px; padding: 10px; font-size: 1em; }
+    #preview { margin-top: 20px; padding: 15px; background: #fff; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>テンプレート生成ツール</h1>
+  <label for="preset">プリセットを選択：</label>
+  <select id="preset">
+    <option value="battery">バッテリー不具合</option>
+    <option value="water">水没</option>
+    <option value="os">OS不具合</option>
+  </select>
+
+  <label for="customText">カスタムメッセージ（任意）：</label>
+  <textarea id="customText" rows="4" placeholder="例：再起動後も改善しない場合は..."></textarea>
+
+  <button onclick="generateTemplate()">テンプレート生成</button>
+
+  <div id="preview"></div>
+
+  <script src="templateEngine.js"></script>
+</body>
+</html>
